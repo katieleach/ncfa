@@ -10,4 +10,18 @@ class StaticPagesController < ApplicationController
 
   def about_aerm
   end
+
+  def methodology
+  end
+  
+  def collection
+  end
+  
+  def limitations
+  end
+  
+  def ratings
+  end
+  
+
 end
