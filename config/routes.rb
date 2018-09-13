@@ -7,7 +7,13 @@ Rails.application.routes.draw do
     get '/aerm', to: 'static_pages#about_aerm', as: 'about_aerm'
   end
 
-  get '/contact', to: 'static_pages#contact'
+  get '/methodology', to: 'static_pages#methodology'
+  get '/collection', to: 'static_pages#collection'
+  get '/limitations', to: 'static_pages#limitations'
+  get '/ratings', to: 'static_pages#ratings'
+
+  get '/contact', to: 'static_pages#contact', as: 'contact'
+
 
   scope '/data' do
     resource :sectors, only: [:index]
