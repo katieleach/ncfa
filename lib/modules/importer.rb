@@ -1,6 +1,6 @@
 require 'csv'
 
-module Importer do
+module Importer
   FACTSHEET                     = "#{Rails.root}/lib/data/seeds/factsheet.csv".freeze
   EXPLORE_BY_ASSET              = "#{Rails.root}/lib/data/seeds/explore_by_asset.csv".freeze
   EXPLORE_BY_ECOSYSTEM_SERVICE  = "#{Rails.root}/lib/data/seeds/explore_by_ecosystem_service.csv".freeze
