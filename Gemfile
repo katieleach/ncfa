@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
+gem "appsignal"
 
 
 # Reduces boot times through caching; required in config/boot.rb
