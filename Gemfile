@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 gem "appsignal"
+gem 'webpacker', '~> 3.5'
 
 
 # Reduces boot times through caching; required in config/boot.rb
