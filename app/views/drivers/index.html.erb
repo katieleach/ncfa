@@ -2,5 +2,5 @@
 <p>Find me in app/views/driver/index.html.erb</p>
 <p><a href="https://projects.invisionapp.com/share/NPNSQSI2QFM#/screens/319019067">invision</a></p>
 <% @drivers.each do |driver| %>
-  <p><%= driver.name %></p>
+  <p><%= link_to driver.name, driver_path(driver.id) %></p>
 <% end %>

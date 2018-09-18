@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'sector/index'
-  get 'ecosystem_service/index'
-  get 'asset/index'
-  get 'driver/index'
-  root 'static_pages#home'
 
   scope '/about' do
     get '/ncfa', to: 'static_pages#about_ncfa', as: 'about_ncfa'
@@ -16,12 +11,13 @@ Rails.application.routes.draw do
   get '/ratings', to: 'static_pages#ratings'
 
   get '/contact', to: 'static_pages#contact', as: 'contact'
+  get '/sectors', to: 'static_pages#sectors', as: 'sectors'
 
 
   scope '/data' do
-    resource :sectors, only: [:index]
-    resource :ecosystem_services, only: [:index]
-    resource :assets, only: [:index]
-    resource :drivers, only: [:index]
+
+    resources :ecosystem_services, only: [:index, :show]
+    resources :assets, only: [:index, :show]
+    resources :drivers, only: [:index, :show]
   end
 end

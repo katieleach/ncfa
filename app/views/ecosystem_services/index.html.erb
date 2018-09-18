@@ -2,5 +2,5 @@
 <p>Find me in app/views/ecosystem_service/index.html.erb</p>
 <p><a href="https://projects.invisionapp.com/share/NPNSQSI2QFM#/screens/318725954">invision</a></p>
 <% @services.each do |service| %>
-  <p><%= service.name %></p>
+  <p><%= link_to service.name, ecosystem_service_path(service.id)  %></p>
 <% end %>

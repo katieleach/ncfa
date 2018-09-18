@@ -22,6 +22,9 @@ class StaticPagesController < ApplicationController
   
   def ratings
   end
-  
+
+  def sectors
+    @sectors = Sector.all
+  end
 
 end

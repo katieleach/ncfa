@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+es_animals = EcosystemService.create(name: 'Animal-based energy')
+es_bioremediation = EcosystemService.create(name: 'Bio-remediation')
+a_species = Asset.create(name:'Species')
+d_diseases = Driver.create(name: 'Diseases')
+d_pollution = Driver.create(name: 'Pollution')
+
+es_animals.assets << a_species
+a_species.drivers << d_diseases
+
+es_bioremediation.assets << a_species
