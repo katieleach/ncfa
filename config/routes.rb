@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
 
   scope '/about' do
     get '/ncfa', to: 'static_pages#about_ncfa', as: 'about_ncfa'
