@@ -48,7 +48,8 @@ ActiveRecord::Schema.define(version: 2018_09_11_104133) do
   end
 
   create_table "materialities", force: :cascade do |t|
-    t.string "name"
+    t.string "rag"
+    t.text "justification"
     t.bigint "production_process_id"
     t.bigint "ecosystem_services_id"
     t.datetime "created_at", null: false
