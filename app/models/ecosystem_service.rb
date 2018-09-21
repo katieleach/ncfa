@@ -4,5 +4,4 @@ class EcosystemService < ApplicationRecord
 
   has_many :ecosystem_services_assets_joins
   has_many :assets, through: :ecosystem_services_assets_joins
-  # has_and_belongs_to_many :assets
 end

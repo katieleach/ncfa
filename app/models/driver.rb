@@ -1,5 +1,4 @@
 class Driver < ApplicationRecord
-  # has_and_belongs_to_many :assets
-
-  has_many :assets, through: :assets_drivers_join
+  has_many :assets_drivers_joins
+  has_many :assets, through: :assets_drivers_joins
 end
