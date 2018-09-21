@@ -7,11 +7,13 @@ module Importer
   EXPLORE_BY_ECOSYSTEM_SERVICE  = "#{Rails.root}/lib/data/seeds/explore_by_ecosystem_service.csv".freeze
 
   def self.import_all
-    self.import_sectors_sub_industries_and_processes
+    self.import_sectors_subindustries_and_processes
     self.import_ecosystem_services
     self.import_assets
     self.import_drivers
     self.import_materiality
+    self.import_ecosystem_services_assets_join
+    self.import_assets_driver_of_change_join
   end
 
   def self.import_sectors_subindustries_and_processes
@@ -101,6 +103,47 @@ module Importer
               justification:      justification,
             )
           end
+        end
+      end
+    rescue => e
+      Appsignal.set_error(e)
+    end
+  end
+
+  def self.import_ecosystem_services_assets_join
+    begin
+      CSV.foreach(FACTSHEET, headers: true, encoding:'iso-8859-1:utf-8') do |row|
+        service = EcosystemService.find_by_name(row['Ecosystem service'].strip)
+        asset   = Asset.find_by_name(row['Natural Capital Asset'].strip)
+
+        EcosystemServicesAssetsJoin.where(ecosystem_service: service, asset: asset).first_or_create do |join|
+          join.ecosystem_service = service
+          join.asset = asset
+        end
+      end
+    rescue => e
+      Appsignal.set_error(e)
+    end
+  end
+
+  def self.import_assets_driver_of_change_join
+    begin
+      CSV.foreach(FACTSHEET, headers: true, encoding:'iso-8859-1:utf-8') do |row|
+        asset   = Asset.find_by_name(row['Natural Capital Asset'])
+        driver  = Driver.find_by_name(row['Driver of change'])
+
+        if asset && driver
+          AssetDriverJoin.create(
+            asset:  asset,
+            driver: driver,
+            influence: row['Influence'],
+            justification: row['Influence justification'],
+            likely_response: row['Likely response'],
+            effect_on_variability: row['Effect on variability of ecosystem service provision'],
+            human_action_or_natural_variation: row['Human action or natural variation'],
+            timescale: row['Timescale'],
+            spatial_characteristics: row['Spatial characteristics']
+          )
         end
       end
     rescue => e
