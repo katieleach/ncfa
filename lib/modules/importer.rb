@@ -90,9 +90,9 @@ module Importer
         production_process = ProductionProcess.find_by_name(row['Production_Process'].strip)
 
         EcosystemService.all.each do |service|
-          rag_col_name            = service.name.gsub(" ", "_") + "_Materiality"
-          justification_col_name  = service.name.gsub(" ", "_") + "_Materiality_Justificiation"
-
+          rag_col_name            = service.name.titleize.gsub(" ", "_") + "_Materiality"
+          justification_col_name  = service.name.titleize.gsub(" ", "_") + "_Materiality_Justification"
+          
           rag, justification = row[rag_col_name], row[justification_col_name]
 
           if rag.present? && justification.present?
@@ -131,9 +131,8 @@ module Importer
       CSV.foreach(FACTSHEET, headers: true, encoding:'iso-8859-1:utf-8') do |row|
         asset   = Asset.find_by_name(row['Natural Capital Asset'])
         driver  = Driver.find_by_name(row['Driver of change'])
-
         if asset && driver
-          AssetDriverJoin.create(
+          AssetsDriversJoin.create(
             asset:  asset,
             driver: driver,
             influence: row['Influence'],

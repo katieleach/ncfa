@@ -4,7 +4,7 @@ class CreateMaterialities < ActiveRecord::Migration[5.2]
       t.string :rag
       t.text :justification
       t.references :production_process, foreign_key: true
-      t.references :ecosystem_services, foreign_key: true
+      t.references :ecosystem_service, foreign_key: true
 
       t.timestamps
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_21_134537) do
+ActiveRecord::Schema.define(version: 2018_09_21_145032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 2018_09_21_134537) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "assets_drivers", id: false, force: :cascade do |t|
-    t.bigint "asset_id", null: false
-    t.bigint "driver_id", null: false
-    t.index ["asset_id", "driver_id"], name: "index_assets_drivers_on_asset_id_and_driver_id"
-    t.index ["driver_id", "asset_id"], name: "index_assets_drivers_on_driver_id_and_asset_id"
   end
 
   create_table "assets_drivers_joins", force: :cascade do |t|
@@ -78,10 +71,10 @@ ActiveRecord::Schema.define(version: 2018_09_21_134537) do
     t.string "rag"
     t.text "justification"
     t.bigint "production_process_id"
-    t.bigint "ecosystem_services_id"
+    t.bigint "ecosystem_service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ecosystem_services_id"], name: "index_materialities_on_ecosystem_services_id"
+    t.index ["ecosystem_service_id"], name: "index_materialities_on_ecosystem_service_id"
     t.index ["production_process_id"], name: "index_materialities_on_production_process_id"
   end
 
@@ -111,7 +104,7 @@ ActiveRecord::Schema.define(version: 2018_09_21_134537) do
   add_foreign_key "assets_drivers_joins", "drivers"
   add_foreign_key "ecosystem_services_assets_joins", "assets"
   add_foreign_key "ecosystem_services_assets_joins", "ecosystem_services"
-  add_foreign_key "materialities", "ecosystem_services", column: "ecosystem_services_id"
+  add_foreign_key "materialities", "ecosystem_services"
   add_foreign_key "materialities", "production_processes"
   add_foreign_key "production_processes", "sub_industries"
   add_foreign_key "sub_industries", "sectors"
