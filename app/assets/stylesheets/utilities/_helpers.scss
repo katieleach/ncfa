@@ -1,0 +1,152 @@
+//--------------------------------------------------
+// helpers
+//--------------------------------------------------
+// - fouc
+// - font
+// - lists
+// - display
+// - dimensions
+// - positioning
+// - margin & padding
+// - backgrounds
+//
+//--------------------------------------------------
+// fouc (flash of unstyled content)
+//--------------------------------------------------
+[v-cloak] { display: none; }
+
+//--------------------------------------------------
+// font
+//--------------------------------------------------
+strong, .bold { font-weight: $bold; }
+.light { font-weight: $light;}
+.normal { font-weight: normal; }
+.italic { font-style: italic; }
+
+.text-12 { font-size: rem-calc(12); }
+.text-13 { font-size: rem-calc(13); }
+.text-14 { font-size: rem-calc(14); }
+.text-24 {
+  font-size: rem-calc(20);
+  @include breakpoint($medium) { font-size: rem-calc(24); }
+}
+.text-30 {
+  font-size: rem-calc(24);
+  @include breakpoint($medium) { font-size: rem-calc(30); }
+}
+
+.text-blue { color: $blue; }
+.text-green { color: $green }
+.text-red { color: $red; }
+.text-iucn { color: $iucn; }
+.text-white { color: $white; }
+.text-marketing-green { color: $marketing-green; }
+.text-marketing-teal { color: $marketing-teal; }
+.text-marketing-blue { color: $marketing-blue; }
+.text-marketing-purple { color: $marketing-purple; }
+.text-marketing-pink { color: $marketing-pink; }
+.text-marketing-red { color: $marketing-red; }
+.text-marketing-orange { color: $marketing-orange; }
+.text-marketing-yellow { color: $marketing-yellow; }
+
+.text-marketing-date { font-size: rem-calc(30); }
+
+//--------------------------------------------------
+// dimensions
+//--------------------------------------------------
+.w-100 { width: 100%;}
+
+//--------------------------------------------------
+// lists
+//--------------------------------------------------
+.ul-unstyled {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ul-inline li { display: inline-block; }
+
+//--------------------------------------------------
+// display
+//--------------------------------------------------
+.display-block { display: block; }
+.display-inline { display: inline-block; }
+
+.full-height { height: 100%; }
+
+.full-height-topbar {
+  height: calc(100vh - #{$topbarHeightSmall});
+
+  @include breakpoint ($small) {
+    height: calc(100vh - #{$topbarHeightMedium});
+  }
+
+  @include breakpoint ($medium) {
+    height: calc(100vh - #{$topbarHeightLarge});
+  }
+}
+
+//--------------------------------------------------
+// positioning
+//--------------------------------------------------
+.center { text-align: center; }
+.right { text-align: right; }
+.left { text-align: left; }
+
+.relative { position: relative; }
+
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+//--------------------------------------------------
+// margin & padding
+//--------------------------------------------------
+.no-margin--top { margin-top: 0; }
+.no-margin { margin: 0; }
+.margin-center { margin: 0 auto; }
+.margin-space-left { margin-left: rem-calc(14); }
+.margin-space-right { margin-right: rem-calc(14); }
+
+//--------------------------------------------------
+// backgrounds
+//--------------------------------------------------
+.bg-blue-map { background-color: $blue-map; }
+.bg-grey-xlight { background-color: $grey-xlight; }
+.bg-grey-light { background-color: $grey-light; }
+.bg-grey { background-color: $grey; }
+.bg-grey-dark { background-color: $grey-dark; }
+.bg-grey-xdark { background-color: $grey-xdark; }
+.bg-marketing-green { background-color: $marketing-green; }
+.bg-marketing-teal { background-color: $marketing-teal; }
+.bg-marketing-blue { background-color: $marketing-blue; }
+.bg-marketing-purple { background-color: $marketing-purple; }
+.bg-marketing-pink { background-color: $marketing-pink; }
+.bg-marketing-red { background-color: $marketing-red; }
+.bg-marketing-orange { background-color: $marketing-orange; }
+.bg-marketing-yellow { background-color: $marketing-yellow; }
+.bg-marketing-blue-light { background-color: lighten($marketing-blue, 30%); }
+.bg-marketing-green-light { background-color: lighten($marketing-green, 30%); }
+.bg-marketing-purple-light { background-color: lighten($marketing-purple, 30%); }
+.bg-marketing-red-light { background-color: lighten($marketing-red, 30%); }
+.bg-marketing-yellow-light { background-color: lighten($marketing-yellow, 30%); }
+.bg-rainbow { background: linear-gradient(90deg, $marketing-green 0%, $marketing-teal 14.29%, $marketing-blue 28.57%, $marketing-purple 42.86%, $marketing-pink 57.14%, $marketing-red 71.43%, $marketing-orange 84.71%, $marketing-yellow 100%); }
+
+.bg-image-overlay {
+  position: relative;
+  z-index: 0;
+
+  &:before {
+    background-color: rgba(black, 0.3);
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}

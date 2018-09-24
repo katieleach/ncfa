@@ -1,0 +1,71 @@
+//--------------------------------------------------
+// topbar - reusable styles
+//--------------------------------------------------
+%topbar {
+}
+
+
+.topbar {
+//--------------------------------------------------
+// primary topbar
+//--------------------------------------------------
+ &--primary {
+    @extend .gutter--left;
+    background-color: $grey;
+    color: white;
+    height: $topbarHeightSmall;
+
+    @include breakpoint($small) { height: $topbarHeightMedium; }
+    @include breakpoint($medium) { height: $topbarHeightLarge; }
+
+    .topbar {
+      &__logo {
+        @extend .site-logo;
+      }
+    }
+  }
+
+//--------------------------------------------------
+// secondary topbar
+//--------------------------------------------------
+  &--secondary {
+    @extend .gutters;
+    padding-top: rem-calc(10);
+    padding-bottom: rem-calc(10);
+
+    @include breakpoint($small) {
+      padding-top: rem-calc(13);
+      padding-bottom: rem-calc(13);      
+    }
+
+    &-grey {
+      background-color: $grey-xlight;
+      border-bottom: solid 1px $grey-light;
+    }
+
+    &-map {
+      height: $topbarSecondaryHeightSmall;
+
+      @include breakpoint($small) { height: $topbarSecondaryHeightMedium; }
+      @include breakpoint($medium) { height: $topbarSecondaryHeightLarge; }
+    }
+
+    &-data-download { height: $topbarSecondaryDataDownload; }
+  }
+
+//--------------------------------------------------
+// marketing topbar
+//--------------------------------------------------
+  &--marketing {
+    padding-top: rem-calc(8);
+    
+    @include breakpoint($small) { padding-top: $gutter-small; }
+    @include breakpoint($medium) { padding-top: rem-calc(40); }
+
+    .topbar__logo {
+      margin-right: auto;
+      
+      @include breakpoint($small) { order: -1; }
+    }
+  }
+}

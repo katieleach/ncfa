@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   get '/contact', to: 'static_pages#contact', as: 'contact'
 
+  get '/explore', to: 'static_pages#explore', as: 'explore'
+
+  get '/map', to: 'static_pages#map', as: 'map'
 
   scope '/data' do
     resource :sectors, only: [:index]

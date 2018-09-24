@@ -13,15 +13,20 @@ class StaticPagesController < ApplicationController
 
   def methodology
   end
-  
+
   def collection
   end
-  
+
   def limitations
   end
-  
+
   def ratings
   end
-  
+
+  def explore
+  end
+
+  def map
+  end
 
 end
