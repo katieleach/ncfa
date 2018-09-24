@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asset: one
+  driver: one
+  influence: MyString
+  justification: MyText
+  likely_response: MyText
+  effect_on_variability: MyText
+  human_action_or_natural_variation: MyString
+  timescale: MyString
+  spatial_characteristics: MyString
+
+two:
+  asset: two
+  driver: two
+  influence: MyString
+  justification: MyText
+  likely_response: MyText
+  effect_on_variability: MyText
+  human_action_or_natural_variation: MyString
+  timescale: MyString
+  spatial_characteristics: MyString
