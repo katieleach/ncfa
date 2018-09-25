@@ -5,5 +5,6 @@ class AssetsController < ApplicationController
 
   def show
     @asset = Asset.find(params[:id])
+    @materialities = @asset.ecosystem_services.map(&:materialities).flatten(1).uniq(&:production_process)
   end
 end

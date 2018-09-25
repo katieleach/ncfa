@@ -2,3 +2,26 @@
 <p>Find me in app/views/assets/index.html.erb</p>
 <p><a href="https://projects.invisionapp.com/share/NPNSQSI2QFM#/screens/317226205">invision</a></p>
 <h1><%= @asset.name %></h1>
+
+Important for:
+<ul>
+Ecosystem Category
+<% @asset.ecosystem_services.each do |service| %>
+
+<li><%= service.name %>
+
+<% end %>
+</ul>
+
+Highly material for:
+
+<%= render partial: "materialities", object: @materialities %>
+
+Drivers of Change:
+
+<ul>
+<% @asset.name %> ->
+<% @asset.drivers.uniq.each do |driver| %>
+<li><%= driver.name %> <%= link_to 'View ->', driver_path(driver.id) %> </li>
+<% end %>
+</ul>

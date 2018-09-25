@@ -11,28 +11,6 @@ Influences to assets:
 <% end %>
 </ul>
 
-<ul>
-  Likely to influence:
-  <% im = @materialities.group_by{|m| m.production_process.sub_industry}  %>
-  
-  <% im.keys.each do |ind| %>
+Likely to influence:
 
-  <table>
-    <tr>
-      <th>   <%= ind.name %> </th>
-      <th> Materiality Rating </th>
-      <th> </th>
-    </tr>
-    <% im[ind].each do |m| %>
-    
-    <tr>
-      <td><%= m.production_process.name %></td>
-      <td><%= m.rag %></td>
-      <td><%= m.justification %></td>
-    </tr>
-      
-    <% end %>
-  </table>
-  
-  <% end %>
-</ul>
+<%= render partial: "materialities", object: @materialities %>
