@@ -7,7 +7,7 @@
 Influences to assets:
 <% ad = @driver.assets_drivers_joins.group_by(&:asset) %>
 <% ad.keys.each do |key| %>
-<li><%= key.name %> </li>
+<li><%= key.name %></li>
 <% end %>
 </ul>
 

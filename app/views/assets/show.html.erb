@@ -22,6 +22,6 @@ Drivers of Change:
 <ul>
 <% @asset.name %> ->
 <% @asset.drivers.uniq.each do |driver| %>
-<li><%= driver.name %> <%= link_to 'View ->', driver_path(driver.id) %> </li>
+<li><%= driver.name %> <%= link_to 'View ->', driver_path(driver.id) %></li>
 <% end %>
 </ul>

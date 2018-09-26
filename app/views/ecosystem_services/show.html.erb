@@ -12,7 +12,7 @@ Natural Capital Assets:
       Drivers of Change:
       <% ad =  asset.assets_drivers_joins.group_by(&:driver) %>
       <% ad.keys.each do |key| %>
-      <li> <%= key.name %> </li>
+      <li><%= key.name %></li>
       <table>
 	<tr>
 	  <th>Likely Response </th>

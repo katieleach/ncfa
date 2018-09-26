@@ -6,18 +6,16 @@
 
   <table>
     <tr>
-      <th>   <%= ind.name %> </th>
+      <th><%= ind.name %></th>
       <th> Materiality Rating </th>
       <th> </th>
     </tr>
     <% im[ind].each do |m| %>
-    
     <tr>
       <td><%= m.production_process.name %></td>
       <td><%= m.rag %></td>
       <td><%= m.justification %></td>
     </tr>
-      
     <% end %>
   </table>
   
