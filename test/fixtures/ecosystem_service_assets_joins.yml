@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ecosystem_service: one
+  asset: one
+  importance: MyString
+  justification: MyText
+
+two:
+  ecosystem_service: two
+  asset: two
+  importance: MyString
+  justification: MyText

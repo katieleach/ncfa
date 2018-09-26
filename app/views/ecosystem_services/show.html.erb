@@ -1,0 +1,40 @@
+<h1>EcosystemServices#show</h1>
+<p>Find me in app/views/ecosystem_services/show.html.erb</p>
+<p><a href="https://projects.invisionapp.com/share/NPNSQSI2QFM#/screens/317451457">invision</a></p>
+<h1><%= @service.name %></h1>
+
+Natural Capital Assets:
+<ul>
+  <% @service.assets.each do |asset| %>
+  <li>
+    <h2><%= asset.name %></h2>
+    <ul>
+      Drivers of Change:
+      <% ad =  asset.assets_drivers_joins.group_by(&:driver) %>
+      <% ad.keys.each do |key| %>
+      <li><%= key.name %></li>
+      <table>
+	<tr>
+	  <th>Likely Response </th>
+	  <th>Effect of variability on services provision</th>
+	  <th>Human action or natural variation</th>
+	  <th>Timescale</th>
+	  <th>Spatial Characteristics</th>
+	</tr>
+	<% ad[key].each do |adj| %>
+	<tr>
+	  <td><%= adj.likely_response %></td>
+	  <td><%= adj.effect_on_variability %></td>
+	  <td><%= adj.human_action_or_natural_variation %></td>
+	  <td><%= adj.timescale %></td>
+	  <td><%= adj.spatial_characteristics %></td>
+	</tr>
+	<% end %>
+      </table>
+      <% end %>
+    </ul>
+    
+  </li>
+  <% end %>
+</ul>
+

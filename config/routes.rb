@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sector/index'
   root 'static_pages#home'
 
   scope '/about' do
@@ -13,12 +12,16 @@ Rails.application.routes.draw do
   get '/ratings', to: 'static_pages#ratings'
 
   get '/contact', to: 'static_pages#contact', as: 'contact'
+  get '/sectors', to: 'static_pages#sectors', as: 'sectors'
 
   get '/explore', to: 'static_pages#explore', as: 'explore'
 
   get '/map', to: 'static_pages#map', as: 'map'
 
   scope '/data' do
-    resource :sectors, only: [:index]
+
+    resources :ecosystem_services, only: [:index, :show]
+    resources :assets, only: [:index, :show]
+    resources :drivers, only: [:index, :show]
   end
 end
