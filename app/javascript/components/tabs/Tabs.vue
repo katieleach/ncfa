@@ -1,0 +1,56 @@
+<template>
+  <div>
+    <ul class="tabs__triggers ul-inline">
+      <li v-for="child, index in children" @click="click(child)" class="tab__trigger" :class="{ 'tab--active' : child.isActive }">
+        {{ child.title }}
+      </li>
+    </ul>
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'tabs',
+    data () {
+      return {
+        children: []
+      }
+    },
+    created () {
+      this.children = this.$children
+    },
+    methods: {
+      click (selectedChild) {
+        this.children.forEach(child => {
+          child.isActive = child.id === selectedChild.id
+        })
+      },
+      resetTabs () {
+        this.children.forEach((child, index) => {
+          child.isActive = index === 0
+        })
+      }
+    }
+  }
+</script>
+
+<style scoped>
+.tabs__triggers {
+  margin: 0;
+  padding: 0;
+}
+
+.tab__trigger {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.tab__trigger:last-child {
+  border-left: none;
+}
+
+.tab--active {
+  background: #ccc;
+}
+</style>

@@ -2,36 +2,55 @@
   <div>
     <site-header></site-header>
 
-    <h1>Natural Capital Risk Explorer Tool</h1>
-    <p>Abc</p>
+    <div class="container">
+      <h1>Natural Capital Risk Explorer Tool</h1>
+      <p>Abc</p>
+    </div>
 
     <explore-menu></explore-menu>
-    <explore-sections-tabs></explore-sections-tabs>
 
-    <explore-content-services></explore-content-services>
-    <explore-content-assets></explore-content-assets>
+    <div class="container">
+      <tabs>
+        <tab id="tab-services" title="Ecosystem Services" :active="true">
+          <explore-content-services></explore-content-services>
+        </tab>
+
+        <tab id="tab-assets" title="Natural Capital Assets">
+          <explore-content-assets></explore-content-assets>
+        </tab>
+      </tabs>
+    </div>
 
     <site-footer></site-footer>
   </div>
 </template>
 
 <script>
+import Tabs from './components/tabs/Tabs'
+import Tab from './components/tabs/Tab'
+
 import SiteHeader from './common/SiteHeader'
 import SiteFooter from './common/SiteFooter'
 
 import ExploreMenu from './components/ExploreMenu'
-import ExploreSectionsTabs from './components/ExploreSectionsTabs'
 import ExploreContentAssets from './components/ExploreContentAssets'
 import ExploreContentServices from './components/ExploreContentServices'
 
 export default {
   components: {
+    Tabs,
+    Tab,
     SiteHeader,
     SiteFooter,
     ExploreMenu,
-    ExploreSectionsTabs,
     ExploreContentAssets,
     ExploreContentServices
   }
 }
 </script>
+
+<style scoped>
+h1 {
+  font-family: Roboto;
+}
+</style>
