@@ -1,0 +1,16 @@
+<h1>Driver#show</h1>
+<p>Find me in app/views/drivers/show.html.erb</p>
+<p><a href="https://projects.invisionapp.com/share/NPNSQSI2QFM#/screens/317226179">invision</a></p>
+<h1><%= @driver.name %></h1>
+
+<ul>
+Influences to assets:
+<% ad = @driver.assets_drivers_joins.group_by(&:asset) %>
+<% ad.keys.each do |key| %>
+<li><%= key.name %></li>
+<% end %>
+</ul>
+
+Likely to influence:
+
+<%= render partial: "materialities", object: @materialities %>
