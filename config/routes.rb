@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact', as: 'contact'
   get '/sectors', to: 'static_pages#sectors', as: 'sectors'
 
-
+  namespace :api do 
+    get '/explore/services', to: 'explore#services'
+    get '/explore/assets', to: 'explore#assets'
+    get '/explore/sectors', to: 'explore#sectors'
+  end
   scope '/data' do
 
     resources :ecosystem_services, only: [:index, :show]
