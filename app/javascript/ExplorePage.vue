@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Tabs from './components/tabs/Tabs'
+import Tabs from './components/tabs/Tabs.vue.erb'
 import Tab from './components/tabs/Tab'
 
 import SiteHeader from './common/SiteHeader'

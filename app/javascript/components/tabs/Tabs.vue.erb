@@ -1,5 +1,7 @@
 <template>
   <div>
+    <% helpers = ActionController::Base.helpers %>
+    <%= helpers.image_tag 'test.svg' %> 
     <ul class="tabs__triggers ul-inline">
       <li v-for="child, index in children" @click="click(child)" class="tab__trigger" :class="{ 'tab--active' : child.isActive }">
         {{ child.title }}
