@@ -1,0 +1,118 @@
+.navbar {
+  @extend .gutter--left;
+  @extend .gutter--right;
+  background-color: rgba($green-xdark, 0.5);
+  color: $white;
+
+  height: $topbarSecondaryHeightSmall;
+  @include breakpoint($small) {
+    height: $topbarSecondaryHeightMedium;
+  }
+  @include breakpoint($medium) {
+    height: $topbarSecondaryHeightLarge;
+  }
+}
+
+.navbar__item {
+  margin-right: 24px;
+  font-weight: $thin;
+  font-size: 20px;
+  line-height: 24px;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    font-weight: $bold;
+  }
+}
+
+//prevent navbar items jumping when the font grows on highlighting
+.navbar-link::after {
+  display: block;
+  content: attr(title);
+  font-weight: $bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.navbar-dropdown::after {
+  display: block;
+  content: attr(title) "V"; //TODO: remember to change when SVG is included
+  font-weight: $bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.navbar__dropdown--inactive {
+  .arrowhead {
+    transform: rotate(0deg);
+  }
+  .navbar__dropdown-menu {
+    display: none;
+  }
+}
+
+.navbar__dropdown--active {
+  .navbar__dropdown-toggle {
+    font-weight: $bold;
+  }
+}
+
+.arrowhead {
+  color: $white;
+  transform: rotate(180deg);
+}
+
+.navbar__dropdown-body {
+  width: 240px;
+  padding: 8px 24px 28px 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, $topbarSecondaryHeightSmall / 2);
+  @include breakpoint($small) {
+    transform: translate(-50%, $topbarSecondaryHeightMedium / 2);
+  }
+  @include breakpoint($medium) {
+    transform: translate(-50%, $topbarSecondaryHeightLarge / 2);
+  }
+  box-shadow: 0 1px 2px 1px rgba($black, 0.5);
+  background-color: $green-xdark;
+  font-weight: $thin;
+}
+
+.navbar__dropdown--two-col {
+  max-height: 230px;
+  padding: 20px 0px 36px 48px;
+  width: 365px;
+}
+
+.navbar__dropdown-point {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, $topbarSecondaryHeightSmall / 2) scale(1.25, 1)
+    rotate(45deg);
+  @include breakpoint($small) {
+    transform: translate(-50%, $topbarSecondaryHeightMedium / 2) scale(1.25, 1)
+      rotate(45deg);
+  }
+  @include breakpoint($medium) {
+    transform: translate(-50%, $topbarSecondaryHeightLarge / 2) scale(1.25, 1)
+      rotate(45deg);
+  }
+  background-color: $green-xdark;
+}
+
+.navbar__dropdown-item {
+  width: 180px;
+  padding-top: 18px;
+
+  &:hover {
+    font-weight: $bold;
+  }
+}
