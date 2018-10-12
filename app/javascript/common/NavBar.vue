@@ -23,12 +23,17 @@
 <script>
 import NavBarDropdown from './NavBarDropdown';
 import NavBarLink from './NavBarLink';
+import { mixinResponsive } from '../mixins/mixin-responsive';
+
 //TODO: move navOptions to props
 export default {
     components: {
         NavBarDropdown,
         NavBarLink
     },
+
+    mixins: [ mixinResponsive ],
+
     data: function () {
         return {
             navOptions: [
@@ -59,28 +64,28 @@ export default {
                             name: 'Methodology'
                         },
                         {
-                            id:5,
-                            name: 'Sectors'
-                        },
-                        {
                             id:2,
                             name: 'Data'
-                        },
-                        {
-                            id:6,
-                            name: 'Drivers'
                         },
                         {
                             id:3,
                             name: 'Rating'
                         },
                         {
-                            id:7,
-                            name: 'Assests'
-                        },
-                        {
                             id:4,
                             name: 'Services'
+                        },
+                        {
+                            id:5,
+                            name: 'Sectors'
+                        },
+                        {
+                            id:6,
+                            name: 'Drivers'
+                        },
+                        {
+                            id:7,
+                            name: 'Assests'
                         },
                     ]
                 },
@@ -92,12 +97,19 @@ export default {
             selectedDropdownId: null
         };
     },
+
+    computed: {
+        isBurgerNav() {
+            return this.isSmall();
+        }
+    },
+
     methods: {
         selectDropdown (id) {
             this.selectedDropdownId = this.selectedDropdownId === id ? null : id;
         },
         deselectDropdown (id) {
-            if(this.selectedDropdownId === id) { this.selectedDropdownId = null };
+            if(this.selectedDropdownId === id && !this.isBurgerNav) { this.selectedDropdownId = null };
         },
         isActive (id) {
             return id === this.selectedDropdownId;

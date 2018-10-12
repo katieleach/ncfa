@@ -6,7 +6,8 @@
 export default {
     props: {
         item: {
-            required: true
+            required: true,
+            type: Object
         }
     }
 }
