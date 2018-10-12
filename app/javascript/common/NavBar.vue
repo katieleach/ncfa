@@ -60,29 +60,29 @@ export default {
                             name: 'Methodology'
                         },
                         {
-                            id:2,
-                            name: 'Data'
-                        },
-                        {
-                            id:3,
-                            name: 'Rating'
-                        },
-                        {
-                            id:4,
-                            name: 'Services'
-                        },
-                        {
                             id:5,
                             name: 'Sectors'
+                        },
+                        {
+                            id:2,
+                            name: 'Data'
                         },
                         {
                             id:6,
                             name: 'Drivers'
                         },
                         {
+                            id:3,
+                            name: 'Rating'
+                        },
+                        {
                             id:7,
                             name: 'Assests'
-                        }
+                        },
+                        {
+                            id:4,
+                            name: 'Services'
+                        },
                     ]
                 },
                 {

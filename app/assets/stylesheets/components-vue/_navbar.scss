@@ -84,9 +84,8 @@
 }
 
 .navbar__dropdown--two-col {
-  max-height: 230px;
   padding: 20px 0px 36px 48px;
-  width: 365px;
+  width: 370px;
 }
 
 .navbar__dropdown-point {
@@ -109,8 +108,12 @@
 }
 
 .navbar__dropdown-item {
-  width: 180px;
+  width: 140px;
   padding-top: 18px;
+
+  &:nth-child(odd) {
+    margin-right: 40px;
+  }
 
   &:hover {
     font-weight: $bold;

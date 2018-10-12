@@ -7,7 +7,7 @@
         </span>
         <div class="navbar__dropdown-menu">
             <div class="navbar__dropdown-point"></div>
-            <span class="flex flex-column flex-wrap navbar__dropdown-body" :class="{'navbar__dropdown--two-col': hasTwoColumns}">
+            <span class="flex flex-row flex-wrap navbar__dropdown-body" :class="{'navbar__dropdown--two-col': hasTwoColumns}">
                 <div class="navbar__dropdown-item" 
                     v-for="dropdownItem in item.children" 
                     :key="dropdownItem.id">{{dropdownItem.name}}
