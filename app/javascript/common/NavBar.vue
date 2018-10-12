@@ -3,20 +3,20 @@
         <span class="flex flex-v-center navbar__logo">
         Logo
         </span>
-        <div class="flex flex-v-center flex-h-end">
-            <div class="navbar__item" v-for="option in navOptions" :key="option.id">
+        <div class="flex flex-v-center flex-h-end ">
+            <span class="navbar__item" v-for="option in navOptions" :key="option.id">
                 <nav-bar-dropdown
+                    v-if="option.children" 
                     class="navbar-dropdown"
                     v-on:navbar-dropdown-click="selectDropdown(option.id)" 
                     v-on:navbar-dropdown-click-outside="deselectDropdown(option.id)" 
-                    v-if="option.children" 
                     :title="option.name"
                     :item="option" 
                     :hasTwoColumns="isTwoColDropdown(option)"
                     :isActive="isActive(option.id)">
                 </nav-bar-dropdown>
-                <nav-bar-link class="navbar-link" v-else :title="option.name" :item="option"></nav-bar-link>
-            </div>
+                <nav-bar-link v-else class="navbar-link" :title="option.name" :item="option"></nav-bar-link>
+            </span>
         </div>
     </div>
 </template>

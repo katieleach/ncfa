@@ -1,20 +1,20 @@
 <template>
-    <span class="navbar__dropdown" 
+    <div class="navbar__dropdown" 
         :class="isActive ? 'navbar__dropdown--active' : 'navbar__dropdown--inactive'">
-        <span class="flex navbar__dropdown-toggle" :title="item.name" @click="click()">
+        <div class="flex navbar__dropdown-toggle" :title="item.name" @click="click()">
             <span>{{item.name}}</span>
             <span class="arrowhead">V</span>
-        </span>
+        </div>
         <div class="navbar__dropdown-menu">
             <div class="navbar__dropdown-point"></div>
-            <span class="flex flex-row flex-wrap navbar__dropdown-body" :class="{'navbar__dropdown--two-col': hasTwoColumns}">
+            <div class="flex flex-row flex-wrap navbar__dropdown-body" :class="{'navbar__dropdown--two-col': hasTwoColumns}">
                 <div class="navbar__dropdown-item" 
                     v-for="dropdownItem in item.children" 
                     :key="dropdownItem.id">{{dropdownItem.name}}
                 </div>
-            </span>
+            </div>
         </div>
-    </span>
+    </div>
 </template>
 
 <script>
