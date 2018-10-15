@@ -10,10 +10,10 @@
   }
   
   &__item {
-    margin-right: 24px;
-    font-weight: $thin;
-    font-size: 20px;
-    line-height: 24px;
+    margin-right: 1.5rem;
+    font-weight: $light;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     cursor: pointer;
     position: relative;
     display: block;
@@ -44,11 +44,11 @@
       color: $green-light;
     }
   }
-}
 
-.nav__dropdown-caret {
-  color: $white;
-  transform: rotate(180deg);
+  &__dropdown-caret {
+    color: $white;
+    transform: rotate(180deg);
+  }
 }
 
 //nav-bar
@@ -60,8 +60,8 @@
     }
 
     &__dropdown-body {
-      width: 240px;
-      padding: 28px 32px 10px 32px;
+      width: rem-calc(240);
+      padding: rem-calc(28 32 10 32);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -69,22 +69,23 @@
       @include breakpoint($medium_px) {
         transform: translate(-50%, $topbarSecondaryHeightLarge / 2);
       }
-      box-shadow: 0 1px 2px 1px rgba($black, 0.5);
+      box-shadow: rem-calc(0 1 2 1) rgba($black, 0.5);
       background-color: $green-xdark;
     }
 
     &__dropdown--two-col {
       column-count: 2;
-      padding: 36px 0px 36px 48px;
-      width: 370px;
+      padding: rem-calc(36 0 36 48);
+      width: rem-calc(370);
     }
 
     &__dropdown-point {
-      width: 16px;
-      height: 16px;
+      width: 1.5rem;
+      height: 1.5rem;
       position: absolute;
       top: 25%;
       left: 50%;
+      
       transform: translate(-50%, $topbarSecondaryHeightSmall / 2) scale(1.25, 1)
         rotate(45deg);
       @include breakpoint($small_px) {
@@ -99,8 +100,8 @@
     }
 
     &__dropdown-item {
-      width: 140px;
-      margin-bottom: 18px;
+      width: rem-calc(140);
+      margin-bottom: rem-calc(18);
     }
   }
 }
