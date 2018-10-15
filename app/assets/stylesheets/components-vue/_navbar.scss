@@ -1,157 +1,173 @@
-.navbar {
+.nav{
   @extend .gutter--left;
   @extend .gutter--right;
-  background-color: $green-xdark;
+  background-color: rgba($green-xdark, 0.5);
   color: $white;
-}
-
-.navbar__item {
-  margin-right: 24px;
-  font-weight: $thin;
-  font-size: 20px;
-  line-height: 24px;
-  cursor: pointer;
-  position: relative;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /*Chrome/Opera */
-}
-
-.navbar__select {
-  &:hover {
-    color: $green-light;
+  height: $topbarSecondaryHeightSmall;
+  
+  &__item-container {
+    align-items: center;
+  }
+  
+  &__item {
+    margin-right: 24px;
+    font-weight: $thin;
+    font-size: 20px;
+    line-height: 24px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /*Chrome/Opera */
+  }
+  
+  &__select {
+    &:hover {
+      color: $green-light;
+    }
+  }
+  
+  &__dropdown--inactive {
+    .arrowhead {
+      transform: rotate(0deg);
+    }
+    .nav__dropdown-menu {
+      display: none;
+    }
+  }
+  
+  &__dropdown--active {
+    .nav__dropdown-toggle .nav__select {
+      color: $green-light;
+    }
   }
 }
 
-.navbar__dropdown--inactive {
-  .arrowhead {
-    transform: rotate(0deg);
-  }
-  .navbar__dropdown-menu {
-    display: none;
-  }
-}
-
-.navbar__dropdown--active {
-  .navbar__dropdown-toggle .navbar__select {
-    color: $green-light;
-  }
-}
 
 .arrowhead {
   color: $white;
   transform: rotate(180deg);
 }
 
-//navbar
-@media screen and (min-width: $small + 1) {
-  .navbar {
-    height: $topbarSecondaryHeightSmall;
-    @include breakpoint($small) {
-      height: $topbarSecondaryHeightMedium;
-    }
-    @include breakpoint($medium) {
+//nav-bar
+.nav{
+  @include breakpoint($small_px, true) {
+    height: $topbarSecondaryHeightMedium;
+    @include breakpoint($medium_px, true) {
       height: $topbarSecondaryHeightLarge;
     }
 
-    background-color: rgba($green-xdark, 0.5);
-  }
-
-  .navbar__item-container {
-    align-items: center;
-  }
-
-  .navbar__dropdown-body {
-    width: 240px;
-    padding: 8px 24px 28px 32px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, $topbarSecondaryHeightSmall / 2);
-    @include breakpoint($small) {
+    &__dropdown-body {
+      width: 240px;
+      padding: 8px 24px 28px 32px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, $topbarSecondaryHeightMedium / 2);
+      @include breakpoint($medium_px, true) {
+        transform: translate(-50%, $topbarSecondaryHeightLarge / 2);
+      }
+      box-shadow: 0 1px 2px 1px rgba($black, 0.5);
+      background-color: $green-xdark;
     }
-    @include breakpoint($medium) {
-      transform: translate(-50%, $topbarSecondaryHeightLarge / 2);
-    }
-    box-shadow: 0 1px 2px 1px rgba($black, 0.5);
-    background-color: $green-xdark;
-  }
 
-  .navbar__dropdown--two-col {
-    column-count: 2;
-    padding: 20px 0px 36px 48px;
-    width: 370px;
-  }
-
-  .navbar__dropdown-point {
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, $topbarSecondaryHeightSmall / 2) scale(1.25, 1)
-      rotate(45deg);
-    @include breakpoint($small) {
-      transform: translate(-50%, $topbarSecondaryHeightMedium / 2)
-        scale(1.25, 1) rotate(45deg);
+    &__dropdown--two-col {
+      column-count: 2;
+      padding: 20px 0px 36px 48px;
+      width: 370px;
     }
-    @include breakpoint($medium) {
-      transform: translate(-50%, $topbarSecondaryHeightLarge / 2) scale(1.25, 1)
+
+    &__dropdown-point {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, $topbarSecondaryHeightSmall / 2) scale(1.25, 1)
         rotate(45deg);
+      @include breakpoint($small_px, true) {
+        transform: translate(-50%, $topbarSecondaryHeightMedium / 2)
+          scale(1.25, 1) rotate(45deg);
+      }
+      @include breakpoint($medium_px, true) {
+        transform: translate(-50%, $topbarSecondaryHeightLarge / 2)
+          scale(1.25, 1) rotate(45deg);
+      }
+      background-color: $green-xdark;
     }
-    background-color: $green-xdark;
-  }
 
-  .navbar__dropdown-item {
-    width: 140px;
-    padding-top: 18px;
+    &__dropdown-item {
+      width: 140px;
+      padding-top: 18px;
 
-    &:nth-child(odd) {
-      margin-right: 40px;
+      &:nth-child(odd) {
+        margin-right: 40px;
+      }
     }
   }
 }
 
 //burger nav
-@media screen and (max-width: $small) {
-  .navbar {
-    margin-right: rem-calc(20);
-    display: block;
-    padding: rem-calc(60 0 18 0);
-    width: rem-calc(280);
+@include breakpoint_down($small) {
+  .nav{
+    justify-content: space-between;
 
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2000;
+    &__pane {
+      margin-left: rem-calc(20);
+      display: block;
+      padding: rem-calc(80 0 18 0);
+      width: rem-calc(320);
+      @include breakpoint_down(rem-calc(320)) { width: 100% }
+      background-color: $green-xdark;
 
-    transition: transform 0.4s ease-in-out;
-    //&--active { transform: translateX(0); }
-  }
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 2000;
+      transform: translateX(100%);
+      &.nav__pane--active {
+        transform: translateX(0);
+      }
 
-  .navbar__item-container {
-    flex-direction: column;
-  }
+      transition: transform 0.4s ease-in-out;
 
-  .navbar__item {
-    padding: 0.5rem 2rem;
-  }
-
-  .navbar__logo {
-    display: none;
-  }
-
-  .navbar__dropdown-item {
-    padding: 0.5rem 2rem 0.5rem 1.5rem;
-    &:first-child {
-      padding-top: 1rem;
     }
-    &:last-child {
-      padding-bottom: 0;
+
+    &__close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: rem-calc(14 14 0 0);
+      color: white;
+      font-size: rem-calc(28);
+    }
+
+    &__burger {
+      color: white;
+      font-size: rem-calc(22);
+      margin-right: rem-calc(20);
+
+      display: block;
+    }
+
+
+    $navPaneItemPadding: 0.625rem;
+    &__item {
+      padding: $navPaneItemPadding 2rem; //TODO: variable
+    }
+
+    &__dropdown-item {
+      padding: $navPaneItemPadding 2rem $navPaneItemPadding 1.5rem;
+      &:first-child {
+        padding-top: 2 * $navPaneItemPadding;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
     }
   }
 }

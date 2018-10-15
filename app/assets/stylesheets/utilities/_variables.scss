@@ -72,8 +72,11 @@ $site-width: rem-calc(1176);
 // breakpoints
 //--------------------------------------------------
 $small: rem-calc(720);
+$small_px: 720;
 $medium: rem-calc(960);
+$medium_px: 960;
 $large: $site-width;
+$large_px: 1176;
 
 //--------------------------------------------------
 // padding

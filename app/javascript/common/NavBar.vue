@@ -1,22 +1,23 @@
 <template>
-    <div class="navbar flex flex-v-center">
-        <span class="flex flex-v-center navbar__logo">
+    <div class="nav flex flex-v-center">
+        <span class="nav__logo">
         Logo
         </span>
-        <div class="navbar__item-container flex flex-h-end">
-            <span class="navbar__item" v-for="option in navOptions" :key="option.id">
+        <div class="nav__item-container flex flex-h-end" :class="{ 'nav__pane': isBurgerNav, 'nav__pane--active': isNavPaneActive }">
+            <button class="button button--plain nav__close icon-close" v-show="isBurgerNav" @click="closeNavPane"></button>
+            <span class="nav__item" v-for="option in navOptions" :key="option.id">
                 <nav-bar-dropdown
                     v-if="option.children" 
-                    class="navbar-dropdown"
-                    v-on:navbar-dropdown-click="selectDropdown(option.id)" 
-                    v-on:navbar-dropdown-click-outside="deselectDropdown(option.id)" 
+                    class="nav-dropdown"
+                    v-on:navbar-dropdown-click="toggleDropdown(option.id)" 
+                    v-on:navbar-dropdown-click-outside="handleClickOutside(option.id)" 
                     :item="option" 
-                    :hasTwoColumns="isTwoColDropdown(option)"
-                    :isActive="isActive(option.id)">
+                    :isActive="isActiveDropdown(option.id)">
                 </nav-bar-dropdown>
                 <nav-bar-link v-else class="navbar-link" :title="option.name" :item="option"></nav-bar-link>
             </span>
         </div>
+        <button class="button button--plain nav__burger icon-burger" v-show="isBurgerNav" @click="openNavPane"></button>
     </div>
 </template>
 
@@ -94,28 +95,35 @@ export default {
                     name: 'Contact',
                 }
             ],
-            selectedDropdownId: null
+            selectedDropdownId: null,
+            isNavPaneActive: false
         };
     },
 
     computed: {
-        isBurgerNav() {
+        isBurgerNav: function () {
             return this.isSmall();
         }
     },
 
     methods: {
-        selectDropdown (id) {
+        toggleDropdown (id) {
             this.selectedDropdownId = this.selectedDropdownId === id ? null : id;
         },
-        deselectDropdown (id) {
-            if(this.selectedDropdownId === id && !this.isBurgerNav) { this.selectedDropdownId = null };
+        closeDropdown () {
+            this.selectedDropdownId = null;
         },
-        isActive (id) {
+        handleClickOutside (id) {
+            if(this.selectedDropdownId === id && !this.isBurgerNav) { this.closeDropdown() };
+        },
+        isActiveDropdown (id) {
             return id === this.selectedDropdownId;
         },
-        isTwoColDropdown(option) {
-            return option.children.length > 4;
+        openNavPane () {
+            this.isNavPaneActive = true;
+        },
+        closeNavPane () {
+            this.isNavPaneActive = false;
         }
     } 
 }

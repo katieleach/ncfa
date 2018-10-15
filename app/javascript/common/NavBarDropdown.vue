@@ -1,14 +1,14 @@
 <template>
-    <div class="navbar__dropdown" 
-        :class="isActive ? 'navbar__dropdown--active' : 'navbar__dropdown--inactive'">
-        <div class="flex navbar__dropdown-toggle" @click="click()">
-            <span class="navbar__select">{{item.name}}</span>
-            <span class="arrowhead">V</span>
+    <div class="nav__dropdown" 
+        :class="isActive ? 'nav__dropdown--active' : 'nav__dropdown--inactive'">
+        <div class="flex nav__dropdown-toggle" @click="click()">
+            <span class="nav__select">{{item.name}}</span>
+            <span class="arrowhead">&nbsp;V&nbsp;</span>
         </div>
-        <div class="navbar__dropdown-menu">
-            <div class="navbar__dropdown-point"></div>
-            <div class="navbar__dropdown-body" :class="{'navbar__dropdown--two-col': hasTwoColumns}">
-                <div class="navbar__dropdown-item navbar__select" 
+        <div class="nav__dropdown-menu">
+            <div class="nav__dropdown-point"></div>
+            <div class="nav__dropdown-body" :class="{'nav__dropdown--two-col': hasTwoColumns}">
+                <div class="nav__dropdown-item nav__select" 
                     v-for="dropdownItem in item.children" 
                     :key="dropdownItem.id">{{dropdownItem.name}}
                 </div>
@@ -27,10 +27,11 @@ export default {
         isActive: {
             default: false,
             type: Boolean
-        },
-        hasTwoColumns: {
-            dafault: false,
-            type: Boolean
+        }
+    },
+    computed: {
+        hasTwoColumns: function () {
+            return this.item.children.length > 4;
         }
     },
     methods: {
