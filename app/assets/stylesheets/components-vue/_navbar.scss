@@ -31,7 +31,7 @@
   }
   
   &__dropdown--inactive {
-    .arrowhead {
+    .nav__dropdown-caret {
       transform: rotate(0deg);
     }
     .nav__dropdown-menu {
@@ -46,17 +46,16 @@
   }
 }
 
-
-.arrowhead {
+.nav__dropdown-caret {
   color: $white;
   transform: rotate(180deg);
 }
 
 //nav-bar
 .nav{
-  @include breakpoint($small_px, true) {
+  @include breakpoint($small_px) {
     height: $topbarSecondaryHeightMedium;
-    @include breakpoint($medium_px, true) {
+    @include breakpoint($medium_px) {
       height: $topbarSecondaryHeightLarge;
     }
 
@@ -67,7 +66,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, $topbarSecondaryHeightMedium / 2);
-      @include breakpoint($medium_px, true) {
+      @include breakpoint($medium_px) {
         transform: translate(-50%, $topbarSecondaryHeightLarge / 2);
       }
       box-shadow: 0 1px 2px 1px rgba($black, 0.5);
@@ -88,11 +87,11 @@
       left: 50%;
       transform: translate(-50%, $topbarSecondaryHeightSmall / 2) scale(1.25, 1)
         rotate(45deg);
-      @include breakpoint($small_px, true) {
+      @include breakpoint($small_px) {
         transform: translate(-50%, $topbarSecondaryHeightMedium / 2)
           scale(1.25, 1) rotate(45deg);
       }
-      @include breakpoint($medium_px, true) {
+      @include breakpoint($medium_px) {
         transform: translate(-50%, $topbarSecondaryHeightLarge / 2)
           scale(1.25, 1) rotate(45deg);
       }
@@ -110,7 +109,9 @@
   }
 }
 
-//burger nav
+//burger-nav
+$navPaneItemPadding: 0.625rem;
+
 @include breakpoint_down($small) {
   .nav{
     justify-content: space-between;
@@ -154,10 +155,8 @@
       display: block;
     }
 
-
-    $navPaneItemPadding: 0.625rem;
     &__item {
-      padding: $navPaneItemPadding 2rem; //TODO: variable
+      padding: $navPaneItemPadding 2rem;
     }
 
     &__dropdown-item {

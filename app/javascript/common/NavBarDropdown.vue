@@ -1,24 +1,29 @@
 <template>
-    <div class="nav__dropdown" 
-        :class="isActive ? 'nav__dropdown--active' : 'nav__dropdown--inactive'">
+    <div class="nav__dropdown" :class="isActive ? 'nav__dropdown--active' : 'nav__dropdown--inactive'">
         <div class="flex nav__dropdown-toggle" @click="click()">
             <span class="nav__select">{{item.name}}</span>
-            <span class="arrowhead">&nbsp;V&nbsp;</span>
+            <span class="nav__dropdown-caret">&nbsp;V&nbsp;</span>
         </div>
         <div class="nav__dropdown-menu">
             <div class="nav__dropdown-point"></div>
             <div class="nav__dropdown-body" :class="{'nav__dropdown--two-col': hasTwoColumns}">
-                <div class="nav__dropdown-item nav__select" 
+                <nav-bar-link class="nav__dropdown-item" 
                     v-for="dropdownItem in item.children" 
-                    :key="dropdownItem.id">{{dropdownItem.name}}
-                </div>
+                    :item="dropdownItem" 
+                    :key="dropdownItem.id">
+                </nav-bar-link>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import NavBarLink from './NavBarLink';
+
 export default {
+    components: {
+        NavBarLink
+    },
     props: {
         item: {
             required: true,

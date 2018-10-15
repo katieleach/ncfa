@@ -4,14 +4,14 @@
 //--------------------------------------------------
 // mixins
 //--------------------------------------------------
-@mixin breakpoint($breakpoint) {
-  @media screen and (min-width: $breakpoint + 1) {
+@mixin breakpoint($breakpoint_px) {
+  @media screen and (min-width: rem_calc($breakpoint_px + 1)) {
     @content;
   } 
 }
 
-@mixin breakpoint-down($breakpoint) {
-  @media screen and (max-width: $breakpoint) {
+@mixin breakpoint-down($breakpoint_px) {
+  @media screen and (max-width: rem_calc($breakpoint_px)) {
     @content;
   } 
 }

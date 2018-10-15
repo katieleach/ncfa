@@ -31,11 +31,11 @@ export const mixinResponsive = {
     },
 
     isSmall () {
-      return this.windowWidth < this.breakpoints.small
+      return this.windowWidth <= this.breakpoints.small
     },
 
     isMedium () {
-      return this.windowWidth > this.breakpoints.small && this.windowWidth < this.breakpoints.medium
+      return this.windowWidth > this.breakpoints.small && this.windowWidth <= this.breakpoints.medium
     },
 
     isLarge () {

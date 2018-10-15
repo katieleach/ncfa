@@ -66,17 +66,18 @@ $bold: 500;
 //--------------------------------------------------
 // dimensions
 //--------------------------------------------------
-$site-width: rem-calc(1176);
+$site-width_px: 1176;
+$site-width: rem_calc($site-width_px);
 
 //--------------------------------------------------
 // breakpoints
 //--------------------------------------------------
-$small: rem-calc(720);
 $small_px: 720;
-$medium: rem-calc(960);
 $medium_px: 960;
-$large: $site-width;
-$large_px: 1176;
+$large_px: $site-width_px;
+$small: rem_calc($small_px);
+$medium: rem_calc($medium_px);
+$large: rem_calc($large_px);
 
 //--------------------------------------------------
 // padding

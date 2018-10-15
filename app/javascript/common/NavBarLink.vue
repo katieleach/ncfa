@@ -1,5 +1,5 @@
 <template>
-    <span class="navbar__link nav__select">{{item.name}}</span>
+    <div class="nav__select">{{item.name}}</div>
 </template>
 
 <script>
