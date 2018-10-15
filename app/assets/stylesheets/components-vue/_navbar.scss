@@ -112,7 +112,7 @@
 //burger-nav
 $navPaneItemPadding: 0.625rem;
 
-@include breakpoint_down($small) {
+@include breakpoint_down($small_px) {
   .nav{
     justify-content: space-between;
 

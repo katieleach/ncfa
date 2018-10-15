@@ -7,12 +7,12 @@
 .site-logo {
   width: auto; height: rem-calc(28);
 
-  @include breakpoint($small) { height: rem-calc(34); }
+  @include breakpoint($small_px) { height: rem-calc(34); }
 
   &--large {
     width: auto; height: rem-calc(32);
 
-    @include breakpoint($small) { height: rem-calc(48); }
+    @include breakpoint($small_px) { height: rem-calc(48); }
   }
 
 }

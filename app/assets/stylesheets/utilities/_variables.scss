@@ -67,7 +67,6 @@ $bold: 500;
 // dimensions
 //--------------------------------------------------
 $site-width_px: 1176;
-$site-width: rem_calc($site-width_px);
 
 //--------------------------------------------------
 // breakpoints
@@ -75,9 +74,6 @@ $site-width: rem_calc($site-width_px);
 $small_px: 720;
 $medium_px: 960;
 $large_px: $site-width_px;
-$small: rem_calc($small_px);
-$medium: rem_calc($medium_px);
-$large: rem_calc($large_px);
 
 //--------------------------------------------------
 // padding

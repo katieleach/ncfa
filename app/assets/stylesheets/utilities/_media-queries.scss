@@ -21,20 +21,20 @@
 //--------------------------------------------------
 .breakpoint-small-up {
   display: none;
-  @include breakpoint($small) { display: block; }
+  @include breakpoint($small_px) { display: block; }
 }
 
 .breakpoint-medium-up {
   display: none;
-  @include breakpoint($medium) { display: block; }
+  @include breakpoint($medium_px) { display: block; }
 }
 
 .breakpoint-small-down {
   display: block;
-  @include breakpoint($small) { display: none; }
+  @include breakpoint($small_px) { display: none; }
 }
 
 .breakpoint-medium-down {
   display: block;
-  @include breakpoint($medium) { display: none; }
+  @include breakpoint($medium_px) { display: none; }
 }
