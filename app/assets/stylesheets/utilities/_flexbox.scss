@@ -113,7 +113,7 @@
 // responsive
 //--------------------------------------------------
 .flex-s-whole { 
-  @include breakpoint-down($small_px){ flex: 0 1 100%; }
+  @include breakpoint-down($small){ flex: 0 1 100%; }
 }
 
 //--------------------------------------------------

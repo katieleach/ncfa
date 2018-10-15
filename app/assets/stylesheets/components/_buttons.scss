@@ -71,14 +71,14 @@ $font-size-medium: rem-calc(20);
 
     display: inline-flex;
 
-    @include breakpoint($small_px) { font-size: $font-size-small; }
+    @include breakpoint($small) { font-size: $font-size-small; }
 
     &:hover span { text-decoration: underline; }
 
     &__icon {
       font-size: rem-calc(16);
 
-      @include breakpoint($small_px) { font-size: rem-calc(18); }
+      @include breakpoint($small) { font-size: rem-calc(18); }
     }
   }
 
@@ -90,7 +90,7 @@ $font-size-medium: rem-calc(20);
     font-weight: $light;
     padding: rem-calc(11 24);
 
-    @include breakpoint($small_px) {
+    @include breakpoint($small) {
       font-size: $font-size-medium;
       padding: rem-calc(14 35);
     }
@@ -154,7 +154,7 @@ $font-size-medium: rem-calc(20);
     padding: rem-calc(0 14);
     text-decoration: underline;
 
-    @include breakpoint($small_px) { font-size: $font-size-medium; }
+    @include breakpoint($small) { font-size: $font-size-medium; }
 
     &:hover { text-decoration: none; }
   }
@@ -166,7 +166,7 @@ $font-size-medium: rem-calc(20);
     text-decoration: underline;
     padding: rem-calc(0 14);
 
-    @include breakpoint($small_px) {
+    @include breakpoint($small) {
       font-size: rem-calc(18);
       padding: rem-calc(0 38);
     }
@@ -270,13 +270,13 @@ $font-size-medium: rem-calc(20);
   &-margin-bottom {
     margin-bottom: rem-calc(14);
 
-    @include breakpoint($small_px) { margin-bottom: rem-calc(30); }
+    @include breakpoint($small) { margin-bottom: rem-calc(30); }
   }
 
   &-margin-top {
     margin-top: rem-calc(14);
 
-    @include breakpoint($small_px) { margin-top: rem-calc(30); }
+    @include breakpoint($small) { margin-top: rem-calc(30); }
   }
 
   &-margin-left { margin-left: rem-calc(14); }

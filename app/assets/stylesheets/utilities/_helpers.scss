@@ -28,11 +28,11 @@ strong, .bold { font-weight: $bold; }
 .text-14 { font-size: rem-calc(14); }
 .text-24 {
   font-size: rem-calc(20);
-  @include breakpoint($medium_px) { font-size: rem-calc(24); }
+  @include breakpoint($medium) { font-size: rem-calc(24); }
 }
 .text-30 {
   font-size: rem-calc(24);
-  @include breakpoint($medium_px) { font-size: rem-calc(30); }
+  @include breakpoint($medium) { font-size: rem-calc(30); }
 }
 
 .text-blue { color: $blue; }
@@ -78,11 +78,11 @@ strong, .bold { font-weight: $bold; }
 .full-height-topbar {
   height: calc(100vh - #{$topbarHeightSmall});
 
-  @include breakpoint ($small_px) {
+  @include breakpoint ($small) {
     height: calc(100vh - #{$topbarHeightMedium});
   }
 
-  @include breakpoint ($medium_px) {
+  @include breakpoint ($medium) {
     height: calc(100vh - #{$topbarHeightLarge});
   }
 }

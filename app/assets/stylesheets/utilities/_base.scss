@@ -27,7 +27,7 @@ h1 {
     font-weight: $light;
     text-transform: none;
 
-    @include breakpoint($small_px) { font-size: rem-calc(60); }
+    @include breakpoint($small) { font-size: rem-calc(60); }
   }
 
   &.heading--simple {
@@ -36,7 +36,7 @@ h1 {
     margin-bottom: rem-calc(25);
     text-transform: capitalize;
 
-    @include breakpoint($small_px) { font-size: rem-calc(30); }
+    @include breakpoint($small) { font-size: rem-calc(30); }
   }
 }
 
@@ -44,14 +44,14 @@ h2 {
   font-size: rem-calc(18);
   font-weight: normal;
 
-  @include breakpoint($small_px) { font-size: rem-calc(20); }
+  @include breakpoint($small) { font-size: rem-calc(20); }
 
   &.heading--marketing {
     font-size: rem-calc(26);
     font-weight: $light;
 
-    @include breakpoint($small_px) { font-size: rem-calc(30); }
-    @include breakpoint($medium_px) { font-size: rem-calc(32); }
+    @include breakpoint($small) { font-size: rem-calc(30); }
+    @include breakpoint($medium) { font-size: rem-calc(32); }
   }
 
   &.heading--simple {
@@ -60,7 +60,7 @@ h2 {
     margin-bottom: 0;
     text-transform: capitalize;
 
-    @include breakpoint($small_px) { font-size: rem-calc(30); }
+    @include breakpoint($small) { font-size: rem-calc(30); }
   }
 }
 
@@ -73,12 +73,12 @@ h3 {
     margin-top: 0;
     margin-bottom: rem-calc(12);
 
-    @include breakpoint($small_px) {
+    @include breakpoint($small) {
       font-size: rem-calc(28);
       margin-bottom: rem-calc(16);
     }
 
-    @include breakpoint($medium_px) {
+    @include breakpoint($medium) {
       font-size: rem-calc(30);
       margin-bottom: rem-calc(18);
     }
@@ -122,8 +122,8 @@ blockquote {
   line-height: 1.3;
   margin: rem-calc(0 0 20 0);
 
-  @include breakpoint($small_px) { font-size: rem-calc(26); }
-  @include breakpoint($medium_px) { font-size: rem-calc(30); }
+  @include breakpoint($small) { font-size: rem-calc(26); }
+  @include breakpoint($medium) { font-size: rem-calc(30); }
 }
 
 //--------------------------------------------------
@@ -135,12 +135,12 @@ blockquote {
   padding-left: rem-calc($gutter-small);
   width: 100%;
 
-  @include breakpoint($medium_px){
+  @include breakpoint($medium){
     padding-right: rem-calc($gutter-medium);
     padding-left: rem-calc($gutter-medium);
   }
 
-  @include breakpoint($large_px){
+  @include breakpoint($large){
     padding-right: rem-calc($gutter-large);
     padding-left: rem-calc($gutter-large);
   }
@@ -150,19 +150,19 @@ blockquote {
 // site structure
 //--------------------------------------------------
 .site-width {
-  @include breakpoint($large_px){ width: $site-width_px; }
+  @include breakpoint($large){ width: $site-width; }
 }
 
 .gutter--left {
   padding-left: $gutter-small;
-  @include breakpoint($medium_px) { padding-left: $gutter-medium; }
-  @include breakpoint($large_px) { padding-left: $gutter-large; }
+  @include breakpoint($medium) { padding-left: $gutter-medium; }
+  @include breakpoint($large) { padding-left: $gutter-large; }
 }
 
 .gutter--right {
   padding-right: $gutter-small;
-  @include breakpoint($medium_px) { padding-right: $gutter-medium; }
-  @include breakpoint($large_px) { padding-right: $gutter-large; }
+  @include breakpoint($medium) { padding-right: $gutter-medium; }
+  @include breakpoint($large) { padding-right: $gutter-large; }
 }
 
 .gutters {
@@ -178,13 +178,13 @@ blockquote {
     @extend %container;
     max-width: rem-calc(600);
 
-    @include breakpoint($medium_px){ width: rem-calc(600); }
+    @include breakpoint($medium){ width: rem-calc(600); }
   }
 
   &--medium {
     @extend %container;
-    @include breakpoint($small_px){ width: rem-calc(700); }
-    @include breakpoint($medium_px){ width: rem-calc(800); }
+    @include breakpoint($small){ width: rem-calc(700); }
+    @include breakpoint($medium){ width: rem-calc(800); }
   }
 }
 
@@ -193,14 +193,14 @@ blockquote {
 //--------------------------------------------------
 .page-padding--top {
   padding-top: $page-padding-top-small;
-  @include breakpoint($medium_px) { padding-top: $page-padding-top-medium; }
-  @include breakpoint($large_px) { padding-top: $page-padding-top-large; }
+  @include breakpoint($medium) { padding-top: $page-padding-top-medium; }
+  @include breakpoint($large) { padding-top: $page-padding-top-large; }
 }
 
 .page-padding--bottom {
   padding-bottom: $page-padding-bottom-small;
-  @include breakpoint($medium_px) { padding-bottom: $page-padding-bottom-medium; }
-  @include breakpoint($large_px) { padding-bottom: $page-padding-bottom-large; }
+  @include breakpoint($medium) { padding-bottom: $page-padding-bottom-medium; }
+  @include breakpoint($large) { padding-bottom: $page-padding-bottom-large; }
 }
 
 .page-padding {
@@ -213,14 +213,14 @@ blockquote {
 //--------------------------------------------------
 .section-padding--top {
   padding-top: $section-padding-top-small;
-  @include breakpoint($medium_px) { padding-top: $section-padding-top-medium; }
-  @include breakpoint($large_px) { padding-top: $section-padding-top-large; }
+  @include breakpoint($medium) { padding-top: $section-padding-top-medium; }
+  @include breakpoint($large) { padding-top: $section-padding-top-large; }
 }
 
 .section-padding--bottom {
   padding-bottom: $section-padding-bottom-small;
-  @include breakpoint($medium_px) { padding-bottom: $section-padding-bottom-medium; }
-  @include breakpoint($large_px) { padding-bottom: $section-padding-bottom-large; }
+  @include breakpoint($medium) { padding-bottom: $section-padding-bottom-medium; }
+  @include breakpoint($large) { padding-bottom: $section-padding-bottom-large; }
 }
 
 .section-padding {
