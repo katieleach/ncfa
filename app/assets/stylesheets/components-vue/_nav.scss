@@ -1,13 +1,60 @@
 //TODO: style nesting
+$navPaneItemPadding:  rem-calc(10);
+
 .nav{
   @extend .gutters;
   background-color: rgba($green-xdark, 0.5);
   color: $white;
+  justify-content: space-between;
   height: $topbarSecondaryHeightSmall;
-  
+  @include breakpoint($small) { height: $topbarSecondaryHeightMedium; }
+  @include breakpoint($medium) { height: $topbarSecondaryHeightLarge; }
+
+  &__burger {
+    color: white;
+    font-size: rem-calc(22);
+    margin-right: rem-calc(20);
+
+    display: block;
+    @include breakpoint($small) { display: none; }
+  }
+
   &__item-container {
     align-items: center;
   }
+
+  &__pane {
+    background-color: $green-xdark;
+    margin-left: rem-calc(20);
+    padding: rem-calc(80 0 18 0);
+    width: 100%;
+    @include breakpoint(320) { width: rem-calc(320); }
+    
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    
+    transform: translateX(100%);
+    
+    &.nav__pane--active {
+      transform: translateX(0);
+    }
+
+    transition: transform 0.4s ease-in-out;
+  }
+
+    &__close {
+      color: white;
+      font-size: rem-calc(28);
+      margin: rem-calc(14 14 0 0);
+      
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   
     &__item {
       cursor: pointer;
@@ -15,6 +62,8 @@
       font-size: rem-calc(20);
       line-height: rem-calc(24);
       margin-right: rem-calc(24);
+      padding: $navPaneItemPadding rem-calc(32);
+      @include breakpoint($small) { padding: 0; }
       
       display: block;
       position: relative;
@@ -29,15 +78,9 @@
     &__select {
       display: block;
 
-      &:hover {
-        color: $green-light;
-      }
+      &:hover { color: $green-light; }
     }
-    
-    &__dropdown-menu {
-      display: none;
-    }
-    
+
     &__dropdown-caret {
       color: $white;
       
@@ -57,127 +100,74 @@
         display: block;
       }
     }
-}
-
-//nav-bar
-.nav{
-  @include breakpoint($small) {
-    height: $topbarSecondaryHeightMedium;
-    @include breakpoint($medium) {
-      height: $topbarSecondaryHeightLarge;
+    
+    &__dropdown-menu {
+      display: none;
     }
 
-    &__dropdown-point {
-      background-color: $green-xdark;
-      width: rem-calc(24); height: rem-calc(24);
-      
-      position: absolute;
-      top: 25%;
-      left: 50%;
-
-      transform: translate(-50%, $topbarSecondaryHeightSmall / 2) scale(1.25, 1)
-        rotate(45deg);
-      @include breakpoint($small) {
-        transform: translate(-50%, $topbarSecondaryHeightMedium / 2)
-          scale(1.25, 1) rotate(45deg);
-      }
-      @include breakpoint($medium) {
-        transform: translate(-50%, $topbarSecondaryHeightLarge / 2)
-          scale(1.25, 1) rotate(45deg);
-      }
-    }
-
-    &__dropdown-body {
-      background-color: $green-xdark;
-      box-shadow: rem-calc(0 1 2 1) rgba($black, 0.5);
-      padding: rem-calc(28 32 10 32);
-      width: rem-calc(240);
-      
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      
-      transform: translate(-50%, $topbarSecondaryHeightMedium / 2);
-      @include breakpoint($medium) {
-        transform: translate(-50%, $topbarSecondaryHeightLarge / 2);
-      }
-    }
-
-    &__dropdown--two-col {
-      column-count: 2;
-      padding: rem-calc(36 0 36 48);
-      width: rem-calc(370);
-    }
-
-      &__dropdown-item {
-        margin-bottom: rem-calc(18);
-        width: rem-calc(140);
-      }
-  }
-}
-
-//burger-nav
-$navPaneItemPadding:  rem-calc(10);
-
-@include breakpoint_down($small) {
-  .nav{
-    justify-content: space-between;
-
-    &__burger {
-      color: white;
-      font-size: rem-calc(22);
-      margin-right: rem-calc(20);
-
-      display: block;
-    }
-
-    &__pane {
-      background-color: $green-xdark;
-      margin-left: rem-calc(20);
-      padding: rem-calc(80 0 18 0);
-      width: rem-calc(320);
-      @include breakpoint_down(rem-calc(320)) { width: 100% }
-      
-      display: block;
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 2000;
-      
-      transform: translateX(100%);
-      
-      &.nav__pane--active {
-        transform: translateX(0);
-      }
-
-      transition: transform 0.4s ease-in-out;
-    }
-
-      &__item {
-        padding: $navPaneItemPadding rem-calc(32);
-      }
-
-      &__dropdown-item {
-        padding: $navPaneItemPadding  rem-calc(32) $navPaneItemPadding rem-calc(24);
+      &__dropdown-point {
+        background-color: $green-xdark;
+        width: rem-calc(24); height: rem-calc(24);
         
-        &:first-child {
-          padding-top: 2 * $navPaneItemPadding;
-        }
-        
-        &:last-child {
-          padding-bottom: 0;
-        }
-      }
-
-      &__close {
-        color: white;
-        font-size: rem-calc(28);
-        margin: rem-calc(14 14 0 0);
-        
+        display: none;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 25%;
+        left: 50%;
+
+        // transform: translate(-50%, $topbarSecondaryHeightSmall / 2) scale(1.25, 1)
+        //   rotate(45deg);
+        @include breakpoint($small) {
+          transform: translate(-50%, $topbarSecondaryHeightMedium / 2)
+            scale(1.25, 1) rotate(45deg);
+            display: block;
+        }
+        @include breakpoint($medium) {
+          transform: translate(-50%, $topbarSecondaryHeightLarge / 2)
+            scale(1.25, 1) rotate(45deg);
+        }
       }
-  }
+
+      &__dropdown-body {
+        @include breakpoint($small) {
+          background-color: $green-xdark;
+          box-shadow: rem-calc(0 1 2 1) rgba($black, 0.5);
+          padding: rem-calc(28 32 10 32);
+          width: rem-calc(240);
+          
+          position: absolute;
+          top: 50%;
+          left: 50%;
+
+          transform: translate(-50%, $topbarSecondaryHeightMedium / 2);
+
+          &.nav__dropdown--two-col {
+            column-count: 2;
+            padding: rem-calc(36 0 36 48);
+            width: rem-calc(370);
+          }
+        }
+
+        @include breakpoint($medium) {
+          transform: translate(-50%, $topbarSecondaryHeightLarge / 2);
+        }
+      }
+
+        &__dropdown-item {
+          @include breakpoint_down($small) {
+            padding: $navPaneItemPadding  rem-calc(32) $navPaneItemPadding rem-calc(24);
+            
+            &:first-child {
+              padding-top: 2 * $navPaneItemPadding;
+            }
+            
+            &:last-child {
+              padding-bottom: 0;
+            }
+          }
+
+          @include breakpoint($small) {
+            margin-bottom: rem-calc(18);
+            width: rem-calc(140);
+          }
+        }
 }
