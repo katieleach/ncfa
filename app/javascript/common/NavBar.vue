@@ -8,9 +8,9 @@
             <span class="nav__item" v-for="option in navOptions" :key="option.id">
                 <nav-bar-dropdown
                     v-if="option.children" 
-                    v-on:navbar-dropdown-click="toggleDropdown(option.id)" 
-                    v-on:navbar-dropdown-click-outside="handleClickOutside(option.id)" 
-                    :item="option" 
+                    v-on:nav-dropdown-click="toggleDropdown(option.id)"
+                    v-on:nav-dropdown-click-outside="handleClickOutside(option.id)" 
+                    :item="option"
                     :isActive="isActiveDropdown(option.id)">
                 </nav-bar-dropdown>
                 <nav-bar-link v-else :title="option.name" :item="option"></nav-bar-link>
@@ -25,7 +25,7 @@ import NavBarDropdown from './NavBarDropdown';
 import NavBarLink from './NavBarLink';
 import { mixinResponsive } from '../mixins/mixin-responsive';
 
-//TODO: move navOptions to props
+//move navOptions to props when CMS is ready
 export default {
     components: {
         NavBarDropdown,

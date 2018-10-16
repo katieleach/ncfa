@@ -1,5 +1,5 @@
 <template>
-    <div class="nav__dropdown" :class="isActive ? 'nav__dropdown--active' : 'nav__dropdown--inactive'">
+    <div class="nav__dropdown" :class="{'nav__dropdown--active': isActive}">
         <div class="flex nav__dropdown-toggle" @click="click()">
             <span class="nav__select">{{item.name}}</span>
             <span class="nav__dropdown-caret">&nbsp;V&nbsp;</span>
@@ -39,17 +39,17 @@ export default {
             return this.item.children.length > 4;
         }
     },
-    methods: {
-        click () {
-            this.$emit('navbar-dropdown-click', this.item.id);
-        }
-    },
     created: function() {
         window.addEventListener('click', e => {
             if (this.isActive && !this.$el.contains(e.target)) {
-                this.$emit('navbar-dropdown-click-outside', this.item.id);
+                this.$emit('nav-dropdown-click-outside', this.item.id);
             }   
         })
+    },
+    methods: {
+        click () {
+            this.$emit('nav-dropdown-click', this.item.id);
+        }
     }
 }
 </script>

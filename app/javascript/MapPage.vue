@@ -23,7 +23,7 @@ export default {
 
   data() {
     return {
-      mapboxToken: 'pk.eyJ1IjoibGV2aWF0aGFuczE3IiwiYSI6ImNpeDd5YWIzZTAwM3Myb29jaHNleW02YTgifQ.KOR1dSr7sTbWUtXw4V6tpA'
+      mapboxToken: process.env.MAPBOX_TOKEN
     }
   }
 }
