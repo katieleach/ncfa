@@ -25,7 +25,7 @@ import NavBarDropdown from './NavBarDropdown';
 import NavBarLink from './NavBarLink';
 import { mixinResponsive } from '../mixins/mixin-responsive';
 
-//TODO: move navOptions to props
+//move navOptions to props when CMS is ready
 export default {
     components: {
         NavBarDropdown,

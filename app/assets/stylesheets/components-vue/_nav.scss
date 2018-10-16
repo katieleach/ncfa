@@ -28,7 +28,7 @@ $navPaneItemPadding:  rem-calc(10);
     margin-left: rem-calc(20);
     padding: rem-calc(80 0 18 0);
     width: 100%;
-    @include breakpoint(320) { width: rem-calc(320); }
+    @include breakpoint($small) { width: rem-calc(320); }
     
     display: block;
     position: fixed;
@@ -63,7 +63,6 @@ $navPaneItemPadding:  rem-calc(10);
       line-height: rem-calc(24);
       margin-right: rem-calc(24);
       padding: $navPaneItemPadding rem-calc(32);
-      @include breakpoint($small) { padding: 0; }
       
       display: block;
       position: relative;
@@ -73,6 +72,8 @@ $navPaneItemPadding:  rem-calc(10);
       user-select: none; /*Chrome/Opera */
       -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
+      
+      @include breakpoint($small) { padding: 0; }
     }
   
     &__select {
@@ -114,8 +115,6 @@ $navPaneItemPadding:  rem-calc(10);
         top: 25%;
         left: 50%;
 
-        // transform: translate(-50%, $topbarSecondaryHeightSmall / 2) scale(1.25, 1)
-        //   rotate(45deg);
         @include breakpoint($small) {
           transform: translate(-50%, $topbarSecondaryHeightMedium / 2)
             scale(1.25, 1) rotate(45deg);
