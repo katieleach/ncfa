@@ -43,17 +43,20 @@ export default {
                     children: [
                         {
                             id: 1,
-                            name: 'What is AERM?'
+                            name: 'What is AERM?',
+                            link: '/about/aerm'
                         },
                         {
                             id: 2,
-                            name: 'About NCFA'
+                            name: 'About NCFA',
+                            link: '/about/ncfa'
                         }
                     ]
                 },
                 {
                     id: 2,
                     name: 'Explore',
+                    link: '/explore'
                 },
                 {
                     id: 3,
@@ -85,7 +88,7 @@ export default {
                         },
                         {
                             id:7,
-                            name: 'Assests'
+                            name: 'Assets'
                         },
                     ]
                 },

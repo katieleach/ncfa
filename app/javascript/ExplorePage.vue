@@ -1,7 +1,6 @@
 <template>
   <div>
     <site-header></site-header>
-    <nav-bar></nav-bar>
 
     <div class="container">
       <h1>Natural Capital Risk Explorer Tool</h1>
@@ -32,7 +31,6 @@ import Tab from './components/tabs/Tab'
 
 import SiteHeader from './common/SiteHeader'
 import SiteFooter from './common/SiteFooter'
-import NavBar from './common/NavBar'
 
 import ExploreMenu from './components/ExploreMenu'
 import ExploreContentAssets from './components/ExploreContentAssets'
@@ -43,7 +41,6 @@ export default {
     Tabs,
     Tab,
     SiteHeader,
-    NavBar,
     SiteFooter,
     ExploreMenu,
     ExploreContentAssets,

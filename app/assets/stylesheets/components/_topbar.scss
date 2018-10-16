@@ -11,12 +11,8 @@
 //--------------------------------------------------
  &--primary {
     @extend .gutter--left;
-    background-color: $grey;
-    color: white;
+    background-color: $green-xdark;
     height: $topbarHeightSmall;
-
-    @include breakpoint($small) { height: $topbarHeightMedium; }
-    @include breakpoint($medium) { height: $topbarHeightLarge; }
 
     .topbar {
       &__logo {
@@ -47,25 +43,8 @@
       height: $topbarSecondaryHeightSmall;
 
       @include breakpoint($small) { height: $topbarSecondaryHeightMedium; }
-      @include breakpoint($medium) { height: $topbarSecondaryHeightLarge; }
     }
 
     &-data-download { height: $topbarSecondaryDataDownload; }
-  }
-
-//--------------------------------------------------
-// marketing topbar
-//--------------------------------------------------
-  &--marketing {
-    padding-top: rem-calc(8);
-    
-    @include breakpoint($small) { padding-top: $gutter-small; }
-    @include breakpoint($medium) { padding-top: rem-calc(40); }
-
-    .topbar__logo {
-      margin-right: auto;
-      
-      @include breakpoint($small) { order: -1; }
-    }
   }
 }

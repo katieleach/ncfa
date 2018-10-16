@@ -1,5 +1,5 @@
 <template>
-    <a class="nav__select">{{item.name}}</a>
+    <a class="nav__select" :href="item.link">{{item.name}}</a>
 </template>
 
 <script>
