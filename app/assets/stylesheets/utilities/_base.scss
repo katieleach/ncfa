@@ -16,27 +16,9 @@ h1 {
   font-size: rem-calc(18);
   font-weight: $bold;
   margin-bottom: rem-calc(2);
-  text-transform: uppercase;
 
   &+ p {
     margin-top: 0;
-  }
-
-  &.heading--marketing {
-    font-size: rem-calc(38);
-    font-weight: $light;
-    text-transform: none;
-
-    @include breakpoint($small) { font-size: rem-calc(60); }
-  }
-
-  &.heading--simple {
-    font-size: rem-calc(25);
-    font-weight: $light;
-    margin-bottom: rem-calc(25);
-    text-transform: capitalize;
-
-    @include breakpoint($small) { font-size: rem-calc(30); }
   }
 }
 
@@ -45,44 +27,10 @@ h2 {
   font-weight: normal;
 
   @include breakpoint($small) { font-size: rem-calc(20); }
-
-  &.heading--marketing {
-    font-size: rem-calc(26);
-    font-weight: $light;
-
-    @include breakpoint($small) { font-size: rem-calc(30); }
-    @include breakpoint($medium) { font-size: rem-calc(32); }
-  }
-
-  &.heading--simple {
-    font-size: rem-calc(25);
-    font-weight: $light;
-    margin-bottom: 0;
-    text-transform: capitalize;
-
-    @include breakpoint($small) { font-size: rem-calc(30); }
-  }
 }
 
 h3 {
   font-weight: $bold;
-
-  &.heading--marketing {
-    font-size: rem-calc(22);
-    font-weight: $light;
-    margin-top: 0;
-    margin-bottom: rem-calc(12);
-
-    @include breakpoint($small) {
-      font-size: rem-calc(28);
-      margin-bottom: rem-calc(16);
-    }
-
-    @include breakpoint($medium) {
-      font-size: rem-calc(30);
-      margin-bottom: rem-calc(18);
-    }
-  }
 }
 
 h4 {
@@ -97,13 +45,6 @@ p {
 
 a {
   &:hover { text-decoration: none; }
-
-  &.a--plain {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover { text-decoration: underline; }
-  }
 }
 
 ul {
