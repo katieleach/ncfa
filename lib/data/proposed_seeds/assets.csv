@@ -1,243 +1,269 @@
-Assets
-Species
-Species
-Habitats
-Habitats
-Species
-Species
-Species
-Species
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Land geomorphology
-Land geomorphology
-Land geomorphology
-Land geomorphology
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Species
-Species
-Species
-Species
-Species
-Species
-Water
-Water
-Water
-Water
-Water
-Atmosphere
-Atmosphere
-Atmosphere
-Ocean geomorphology
-Water
-Water
-Water
-Water
-Water
-Water
-Water
-Water
-Habitats
-Habitats
-Habitats
-Species
-Species
-Species
-Species
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Habitats
-Habitats
-Habitats
-Species
-Species
-Species
-Species
-Species
-Species
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Species
-Species
-Water
-Water
-Water
-Water
-Water
-Water
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Water
-Water
-Water
-Water
-Water
-Water
-Water
-Water
-Water
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Land geomorphology
-Land geomorphology
-Land geomorphology
-Land geomorphology
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Atmosphere
-Atmosphere
-Atmosphere
-Habitats
-Habitats
-Habitats
-Species
-Species
-Species
-Water
-Water
-Water
-Habitats
-Species
-Species
-Species
-Species
-Atmosphere
-Atmosphere
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Species
-Water
-Water
-Water
-Water
-Atmosphere
-Atmosphere
-Atmosphere
-Land geomorphology
-Land geomorphology
-Land geomorphology
-Land geomorphology
-Minerals
-Minerals
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Soils and sediments
-Species
-Species
-Species
-Species
-Species
-Species
-Water
-Water
-Water
-Water
-Water
-Water
-Water
-Water
-Water
-Water
-Species
-Species
-Species
-Atmosphere
-Atmosphere
-Atmosphere
-Atmosphere
-Habitats
-Habitats
-Habitats
-Habitats
-Habitats
-Water
-Water
-Water
-Water
-Water
-Water
-Water
+Asset,Description
+Atmosphere,The atmosphere is formed of gases (such as oxygen) and processes (such as temperature regulation) which support a number of ecosystem services.
+Habitats,"Habitats provide nearly all ecosystem services in some way. They can be marine (for example deep-sea habitats), coastal and terrestrial (for example woodland and forests)."
+Land geomorphology,"Land geomorphology describes the structure of the land, such as mountains and valleys. Land geomorphology supports the provision of regulatory services, like erosion control."
+Minerals,Minerals can be metallic or non-metallic. They support the provision of services like soil quality.
+Ocean geomorphology,"Ocean geomorphology describes the structure of the marine environment such as shelfs and slopes. Ocean geomorphology supports the provision of regulatory services, like dilution by ecosystems."
+Soils and sediments,"Soils and sediments comprise top-soil, sub-soil and ocean sediments. They support a number of regulatory services."
+Species,"Species includes plants, animals, fungi, algae and genetic resources, which can be wild or domestic/commercial, for example livestock. Like habitats, species provide nearly all ecosystem services."
+Water,"Water includes surface water, ground water, ocean water, fossil water and soil water. Water is important for a wide range of ecosystem services."
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
